@@ -1,286 +1,168 @@
-# 🔐 Web3 Security Portfolio
+# 🔐 Seenu Vasan - Web3 Security Researcher
 
-A stunning, modern portfolio website showcasing Web3 security research achievements, built with pure HTML, CSS, and JavaScript. Features glassmorphism design, smooth animations, and full responsiveness.
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-success?style=for-the-badge)](https://seenuvasan1947.github.io/web_3_portfolio/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/seenu-vasan1947)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/seenuvasan1947)
+[![Reddit](https://img.shields.io/badge/Reddit-Follow-orange?style=for-the-badge&logo=reddit)](https://www.reddit.com/u/seenuvasan_1947/s/D0EIt4MNTC)
 
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+## 👋 About Me
 
-## ✨ Features
+I'm a **Web3 Security Researcher** specializing in smart contract security, vulnerability research, and blockchain auditing. With a proven track record in identifying critical security vulnerabilities across multiple blockchain platforms, I help secure the future of decentralized applications.
 
-### 🎨 Modern Design
-- **Glassmorphism Effects**: Beautiful frosted glass UI elements
-- **Gradient Backgrounds**: Dynamic, animated gradient orbs
-- **Smooth Animations**: Intersection Observer-based scroll animations
-- **3D Card Effects**: Interactive tilt effects on hover
-- **Responsive Layout**: Perfect on all devices (mobile, tablet, desktop)
+### 📊 Achievements
 
-### 📊 Interactive Elements
-- **Animated Counters**: Stats count up when scrolled into view
-- **Progress Bars**: Severity findings with animated progress indicators
-- **Parallax Effects**: Smooth parallax scrolling on hero section
-- **Dynamic Orbs**: Mouse-interactive background gradients
-- **Ripple Buttons**: Material Design-inspired button effects
+- 🏆 **Rank #236** in First Flights
+- ⭐ **930 EXP** earned through security research
+- 🎯 **15 Valid Submissions** across all severity levels
+- 🔍 **6 High**, **5 Medium**, **4 Low** severity findings
 
-### 🚀 Performance
-- **Lazy Loading**: Optimized image loading
-- **Intersection Observers**: Efficient scroll-based animations
-- **Debounced Events**: Optimized event handlers
-- **Pure CSS Animations**: Hardware-accelerated transforms
+---
 
-### ♿ Accessibility
-- **Semantic HTML**: Proper heading hierarchy and landmarks
-- **ARIA Labels**: Screen reader support
-- **Keyboard Navigation**: Full keyboard accessibility
-- **High Contrast**: WCAG compliant color contrasts
+## 🛡️ Security Audit Portfolio
 
-## 📈 Achievements Displayed
+### 1. 🎄 Snowman Merkle Airdrop
+**Findings:** 2 High | 1 Medium | 2 Low
 
-- **Rank**: #236 in First Flights
-- **Total EXP**: 930 points earned
-- **Valid Submissions**: 15 security findings
-- **Severity Breakdown**:
-  - 🔴 High: 6 findings
-  - 🟡 Medium: 5 findings
-  - 🟢 Low: 4 findings
+#### High Severity
+- **H-1:** Typo in MESSAGE_TYPEHASH Breaks All EIP-712 Signature Verifications
+- **H-2:** Missing Access Control on mintSnowman() Allows Unlimited NFT Minting
 
-## 🚀 Quick Start
+#### Medium Severity
+- **M-1:** Merkle Leaf Calculation Uses Current Balance Instead of Snapshot
 
-### Local Development
+#### Low Severity
+- **L-1:** Global earnTimer Enables Griefing Attacks and Unfair Token Distribution
+- **L-2:** Missing Claim Status Check Allows Multiple Claims Per User
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/web_3_portfolio.git
-   cd web_3_portfolio
-   ```
+---
 
-2. **Open in browser**
-   - Simply open `index.html` in your browser
-   - Or use a local server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve
-   ```
+### 2. 🔄 RebateFi Hook
+**Findings:** 2 High | 1 Medium
 
-3. **View your portfolio**
-   - Navigate to `http://localhost:8000`
+#### High Severity
+- **H-1:** Duplicate Condition Check Preventing Proper ReFi Validation
+- **H-2:** _isReFiBuy Returns Incorrect Buy/Sell Direction
 
-## 🌐 Deploy to GitHub Pages
+#### Medium Severity
+- **M-1:** withdrawTokens Uses Unsafe ERC20 Transfer
 
-### Method 1: GitHub Settings (Recommended)
+---
 
-1. **Push your code to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial portfolio commit"
-   git push origin main
-   ```
+### 3. 🔐 Secret Vault on Aptos
+**Findings:** 2 High | 2 Medium | 1 Low
 
-2. **Enable GitHub Pages**
-   - Go to your repository on GitHub
-   - Click **Settings** → **Pages**
-   - Under "Source", select **main** branch
-   - Click **Save**
+#### High Severity
+- **H-1:** Incorrect Access Control — Hard-Coded Owner Check
+- **H-2:** Sensitive Data Exposure — Secrets Stored in Plaintext On-Chain
 
-3. **Access your site**
-   - Your portfolio will be live at: `https://yourusername.github.io/web_3_portfolio/`
-   - It may take a few minutes to deploy
+#### Medium Severity
+- **M-1:** Incorrect Access Control — Hard-Coded Owner Check
+- **M-2:** Incorrect Resource Access — Vault Always Borrowed from Deployer
 
-### Method 2: GitHub Actions (Advanced)
+#### Low Severity
+- **L-1:** Resource Already Exists — Users Cannot Update Secret
 
-Create `.github/workflows/deploy.yml`:
+---
 
-```yaml
-name: Deploy to GitHub Pages
+### 4. 👑 Last Man Standing
+**Findings:** 2 Medium | 1 Low
 
-on:
-  push:
-    branches: [ main ]
+#### Medium Severity
+- **M-1:** No Incentive Given to Previous King Despite Stated Game Rules
+- **M-2:** Incorrect Logic in claimThrone Allows Only Current King to Claim
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-```
+#### Low Severity
+- **L-1:** Integer Division Truncation in Fee Calculation
 
-## 🎨 Customization Guide
+---
 
-### 1. Personal Information
+## 💼 Core Competencies
 
-Edit `index.html`:
+### 🔐 Smart Contract Auditing
+Expert in reviewing Solidity code for vulnerabilities and security flaws across EVM-compatible chains.
 
-```html
-<!-- Update your name/title -->
-<h1 class="hero-title">
-    <span class="gradient-text">Your Name</span>
-    <br>Web3 Security Researcher
-</h1>
+### 🛡️ Vulnerability Research
+Specialized in discovering and documenting security issues in blockchain protocols, with experience in:
+- Access Control vulnerabilities
+- Cryptographic implementation flaws
+- Logic errors in DeFi protocols
+- Resource management issues in Move-based chains
 
-<!-- Update your description -->
-<p class="hero-description">
-    Your custom description here...
-</p>
-```
+### ⚡ Bug Bounty Programs
+Active participant in Web3 security competitions and bug bounty platforms, consistently identifying critical vulnerabilities.
 
-### 2. Contact Links
+### 📊 Security Analysis
+Comprehensive analysis of DeFi protocols and smart contract systems, including:
+- Merkle tree implementations
+- EIP-712 signature verification
+- Uniswap V4 hooks
+- Aptos Move contracts
 
-Update social media links in `index.html`:
+---
 
-```html
-<!-- Email -->
-<a href="mailto:your.email@example.com" class="btn btn-primary">
+## 🎯 Specializations
 
-<!-- Twitter -->
-<a href="https://twitter.com/yourhandle" target="_blank">
+- **Smart Contract Languages:** Solidity, Move
+- **Blockchain Platforms:** Ethereum, EVM chains, Aptos
+- **Security Tools:** Static analysis, Formal verification
+- **Audit Types:** DeFi protocols, NFT contracts, Airdrop mechanisms, Game theory contracts
 
-<!-- GitHub -->
-<a href="https://github.com/yourusername" target="_blank">
-```
+---
 
-### 3. Achievement Stats
+## 📞 Get in Touch
 
-Modify the data-target attributes in `index.html`:
+I'm available for:
+- 🔍 Smart contract security audits
+- 🎯 Bug bounty collaborations
+- 💼 Security consulting
+- 🤝 Protocol security reviews
 
-```html
-<!-- Update rank -->
-<div class="stat-value" data-target="236">#0</div>
+### Connect With Me
 
-<!-- Update EXP -->
-<div class="stat-value" data-target="930">0</div>
+- **LinkedIn:** [seenu-vasan1947](https://www.linkedin.com/in/seenu-vasan1947)
+- **GitHub:** [seenuvasan1947](https://github.com/seenuvasan1947)
+- **Reddit:** [seenuvasan_1947](https://www.reddit.com/u/seenuvasan_1947/s/D0EIt4MNTC)
 
-<!-- Update submissions -->
-<div class="stat-value" data-target="15">0</div>
+---
 
-<!-- Update severity counts -->
-<div class="severity-count" data-target="6">0</div> <!-- High -->
-<div class="severity-count" data-target="5">0</div> <!-- Medium -->
-<div class="severity-count" data-target="4">0</div> <!-- Low -->
-```
+## 🌐 Portfolio Website
 
-### 4. Color Scheme
+Visit my interactive portfolio to see detailed breakdowns of all security findings, animated statistics, and a complete showcase of my work in Web3 security.
 
-Edit CSS variables in `styles.css`:
+**[View Live Portfolio →](https://seenuvasan1947.github.io/web_3_portfolio/)**
 
-```css
-:root {
-    /* Change primary gradient */
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    
-    /* Change accent colors */
-    --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    
-    /* Change severity colors */
-    --high-severity: #ff4757;
-    --medium-severity: #ffa502;
-    --low-severity: #26de81;
-}
-```
+### Features
+- ✨ Modern glassmorphism design
+- 📊 Interactive animated statistics
+- 🎨 Detailed project showcases
+- 📱 Fully responsive across all devices
+- 🚀 Optimized performance
 
-### 5. Add Custom Sections
+---
 
-Add new sections in `index.html`:
+## 📚 Documentation
 
-```html
-<section id="custom-section" class="custom-section">
-    <div class="container">
-        <h2 class="section-title">Your Section Title</h2>
-        <!-- Your content here -->
-    </div>
-</section>
-```
+- **[Deployment Guide](DEPLOYMENT.md)** - Instructions for running locally and deploying to GitHub Pages
+- **[Portfolio Website](https://seenuvasan1947.github.io/web_3_portfolio/)** - Live interactive portfolio
 
-## 📁 Project Structure
-
-```
-web_3_portfolio/
-├── index.html          # Main HTML file
-├── styles.css          # All styling and animations
-├── script.js           # Interactive functionality
-├── README.md           # Documentation
-└── LICENSE            # MIT License
-```
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup
-- **CSS3**: Custom properties, Grid, Flexbox, Animations
-- **JavaScript (ES6+)**: Intersection Observer, Event Listeners
-- **Google Fonts**: Inter & Space Grotesk
-- **No Frameworks**: Pure vanilla code for maximum performance
-
-## 🌟 Key Features Breakdown
-
-### Glassmorphism Design
-```css
-background: rgba(255, 255, 255, 0.05);
-backdrop-filter: blur(20px);
-border: 1px solid rgba(255, 255, 255, 0.1);
-```
-
-### Animated Counters
-```javascript
-const animateCounter = (element, target, duration = 2000) => {
-    // Smooth counting animation
-};
-```
-
-### 3D Card Tilt
-```javascript
-achievementCard.addEventListener('mousemove', (e) => {
-    // Calculate tilt based on mouse position
-});
-```
-
-## 📱 Browser Support
-
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Design inspiration from modern Web3 platforms
-- Glassmorphism trend in UI/UX design
-- Web3 security community
-
-## 📞 Contact
-
-- **Email**: your.email@example.com
-- **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
-- **GitHub**: [@yourusername](https://github.com/yourusername)
+This portfolio is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
 
-**⚡ Built with passion for Web3 Security ⚡**
+### ⚡ Securing the Future of Web3 ⚡
 
-If you found this helpful, consider giving it a ⭐!
+*If you're looking for a dedicated security researcher to help protect your Web3 project, let's connect!*
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/seenu-vasan1947)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat&logo=github)](https://github.com/seenuvasan1947)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-4CAF50?style=flat)](https://seenuvasan1947.github.io/web_3_portfolio/)
+
+**Last Updated:** December 2024
 
 </div>
