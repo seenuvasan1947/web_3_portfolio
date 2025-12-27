@@ -1,0 +1,56 @@
+
+Snowman Merkle Airdrop
+
+h-1 Typo in MESSAGE_TYPEHASH Breaks All ERP-712 Signature Verifications
+h-2 Missing Access Control on mintSnowman() Allows Unlimited NFT Minting
+m-1 Merkle Leaf Calculation Uses Current Balance Instead of Snapshot
+l-1 Global earnTimer Enables Griefing Attacks and Unfair Token Distribution
+l-2 Missing Claim Status Check Allows Multiple Claims Per User
+
+
+RebateFi Hook
+
+ h-1 Duplicate Condition Check Preventing Proper ReFi Validation
+## Description Normal Behavior: The \_beforeInitialize hook in RebateFiHook.sol is intended to validate that at least one of the pool currencies is the ReFi token. If neither currency is ReFi, the p
+
+
+h-2 _isReFiBuy Returns Incorrect Buy/Sell Direction
+## Description * **Normal Behavior**:\ The `_isReFiBuy` function is intended to determine whether a swap is a **buy of ReFi** based on which token is `currency0` and the `zeroForOne` flag:
+View
+
+m-1 withdrawTokens Uses Unsafe ERC20 Transfer
+## Description * **Normal Behavior**:\ The `withdrawTokens` function allows the contract owner to transfer ERC20 tok
+
+
+
+Secret Vault on Aptos
+
+H-1 Incorrect Access Control — Hard-Coded Owner Check
+## Description * Normally, access control in Move modules should restrict certain functions so that **only the resource owner (the caller’s address)** can perform the action. * The code currently c
+View
+
+M-1 Incorrect Access Control — Hard-Coded Owner Check
+## Description * Normally, access control in Move modules should restrict certain functions so that **only the resource owner (the caller’s address)** can perform the action. * The code currently c
+View
+
+M-2 Incorrect Resource Access — Vault Always Borrowed from Deployer
+## Description * Normally, in Aptos Move, user-specific resources (like a `Vault`) are stored under the **caller’s address** so each user controls their own data. * The current code incorrectly use
+View
+
+L-2 Resource Already Exists — Users Cannot Update Secret
+## Description * Normally, a secret vault function should either: * **create a new vault** if none exists, or * **update the existing vault** if one already exists. * &#x20; * In the current
+View
+
+Last Man Standing
+
+
+h-2 Sensitive Data Exposure — Secrets Stored in Plaintext On-Chain
+## Description * Normally, applications that manage sensitiv
+
+L-1 Integer Division Truncation in Fee Calculation
+M-1 
+No Incentive Given to Previous King Despite Stated Game Rules
+
+M-2 Incorrect Logic in claimThrone Allows Only Current King to
+
+
